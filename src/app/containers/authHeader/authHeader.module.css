@@ -1,0 +1,25 @@
+.container {
+  margin: 1rem var(--section-horizontal-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  width: 140px;
+  overflow: hidden;
+}
+
+.logoContainer img {
+  width: 100%;
+}
+
+.headerText {
+  color: var(--color-light-theme);
+}
+
+.headerText span {
+  color: var(--color-accent);
+  font-weight: bold;
+  cursor: pointer;
+}

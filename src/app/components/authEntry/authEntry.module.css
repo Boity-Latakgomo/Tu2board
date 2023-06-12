@@ -1,0 +1,11 @@
+.container input {
+  border: 1px #c0c0c0 solid;
+  padding: 0.8rem 1.6rem;
+  width: 400px;
+  border-radius: 35px;
+}
+
+.container input:focus {
+  outline: none;
+  
+}

@@ -1,0 +1,9 @@
+.container{
+    position: absolute;
+    height: 150px;
+    width: 190px;
+    top: 90px;
+    right: var(--section-horizontal-padding);
+    border-radius: 20px;
+    padding: 0.8rem;
+}

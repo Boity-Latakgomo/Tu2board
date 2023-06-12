@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .color-test {
+  color: blue;
+} */
+
+:root {
+  --color-primary: #7f7f7f;
+  --color-primary-dark: #2c2c2c;
+  --color-accent: #ffa500;
+  --color-accent-dark: #ce8600;
+  --color-purple: #804e9f;
+  --color-light-theme: #ffffff;
+  --color-dark-theme: #2c2c2c;
+  --section-horizontal-padding: 10rem;
+  --section-horizontal-medium-padding: 5rem;
+  --section-horizontal-small-padding: 1rem;
+  --entry-focus-shadow: 0px 0px 10px 2px var(--color-accent);
+}
+
+.color__on-light__theme {
+  color: var(--color-dark-theme);
+}
+
+.color__on-dark__theme {
+  color: var(--color-light-theme);
+}
+
+.bgcolor__light-theme {
+  background-color: var(--color-light-theme);
+}
+
+.bgcolor__dark-theme {
+  background-color: var(--color-dark-theme);
+}
+
+.card__shadow {
+  box-shadow: 0px 10px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+@media (max-width: 1000px) {
+}
