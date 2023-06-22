@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import Link from "next/link";
-import "../app/globals.css";
-import { NavBar, HomeContent, Footer } from "../app/containers";
+import "../globals.css";
+import { NavBar, HomeContent, Footer } from "../containers";
 
-function home() {
+function Page() {
   return (
     <div>
       <NavBar />
@@ -13,4 +14,4 @@ function home() {
   );
 }
 
-export default home;
+export default Page;

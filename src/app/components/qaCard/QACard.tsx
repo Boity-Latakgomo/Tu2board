@@ -6,7 +6,7 @@ const QACard = () => {
     <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
       <div className={styles.upperSection}>
         <p>
-          Ho to proof for x + 2 being equals to 2 + x using commtative rule in
+          How to proof for x + 2 being equals to 2 + x using commtative rule in
           mathematics?
         </p>
       </div>

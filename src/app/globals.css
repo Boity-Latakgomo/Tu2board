@@ -7,13 +7,15 @@
 } */
 
 :root {
-  --color-primary: #7f7f7f;
+  --color-primary: #cfcfcf;
   --color-primary-dark: #2c2c2c;
   --color-accent: #ffa500;
+  --color-accent-light: #ffdd9d;
   --color-accent-dark: #ce8600;
   --color-purple: #804e9f;
   --color-light-theme: #ffffff;
   --color-dark-theme: #2c2c2c;
+  --color-dark-qa-header-text: #2d2d2d;
   --section-horizontal-padding: 10rem;
   --section-horizontal-medium-padding: 5rem;
   --section-horizontal-small-padding: 1rem;
@@ -57,7 +59,9 @@ input:focus {
 }
 
 body {
-  background-color: var(--color-primary);
+  background-color: #d7d7d7;
+  /* background: linear-gradient(90deg, white 0%, #f9f0ff 100%); */
+  /* background: linear-gradient(90deg, #ffba3b 38%, #fff0d4 1%); */
 }
 
 @media (max-width: 1000px) {

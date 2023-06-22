@@ -8,7 +8,7 @@ function NavBar() {
   return (
     <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
       <div className={styles.logoContainer}>
-        <img src={coveredLogo.src} alt="app-icon" />
+        <img src={coveredLogo.src} alt="app" />
       </div>
       <div className={styles.searchContainer}>
         <input type="text" />

@@ -1,5 +1,12 @@
 export { default as AuthHeader } from "./authHeader/AuthHeader";
-export { default as AuthForm } from "./authForm/AuthForm";
+export { default as LoginForm } from "./loginForm/LoginForm";
+export { default as RegisterForm } from "./registerForm/RegisterForm";
 export { default as NavBar } from "./navBar/NavBar";
 export { default as HomeContent } from "./homeContent/HomeContent";
 export { default as Footer } from "./footer/Footer";
+export {default as QaContent} from './qaContent/QaContent';
+export {default as QuestionCard} from './questionCard/QuestionCard';
+export { default as AnswerCard } from "./answerCard/AnswerCard";
+export {default as TutorialListContent} from './tutorialListContent/TutorialListContent';
+export {default as TutorialItem} from './tutorialItem/TutorialItem';
+export {default as PostContent} from './postContent/PostContent';

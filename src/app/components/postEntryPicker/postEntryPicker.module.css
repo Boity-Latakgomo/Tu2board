@@ -1,0 +1,70 @@
+.container {
+}
+
+.courseTextContainer{
+    display: flex;
+    margin-left: 2rem;
+    margin-bottom: -1rem;
+}
+
+.courseTextContainer p{
+    background-color: white;
+    padding: 0.2rem 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-accent);    
+    cursor: pointer;
+}
+
+.pickerBody{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 25px;
+}
+
+.entryContainer {
+  border: 1px #c0c0c0 solid;
+  padding: 0.8rem 1.6rem;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: white;
+}
+
+.optionsContainer{
+  padding: 0.8rem;
+  border-radius: 25px;
+  position: absolute;
+  width: 400px;
+  background-color: white;
+}
+
+.optionsContainer p{
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.placeholderText{
+  color: #a2a2a2;
+}
+.selectedText{
+  color: black;
+}
+
+.optionsContainer p:hover{
+  background-color: var(--color-accent-light);
+}
+
+.imageContainer{
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

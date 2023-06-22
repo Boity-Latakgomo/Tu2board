@@ -1,0 +1,47 @@
+.container {
+  }
+  
+.entryContainer {
+    border: 1px #c0c0c0 solid;
+    padding: 0.8rem 1.6rem;
+    width: 400px;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .optionsContainer{
+    padding: 0.8rem;
+    border-radius: 25px;
+    position: absolute;
+    width: 400px;
+    background-color: white;
+  }
+
+  .optionsContainer p{
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+  }
+
+  .placeholderText{
+    color: #a2a2a2;
+  }
+  .selectedText{
+    color: black;
+  }
+
+  .optionsContainer p:hover{
+    background-color: var(--color-accent-light);
+  }
+
+  .imageContainer{
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

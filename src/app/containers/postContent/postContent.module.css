@@ -1,0 +1,73 @@
+.container{
+    margin: 1rem var(--section-horizontal-padding);
+    display: flex;
+    flex-direction: column;
+    min-height: 800px;
+}
+
+.headerText{
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+.titleCover,
+.bodyCover{
+    margin-top: 2rem;
+}
+
+.titleTextContainer,
+.bodyTextContainer{
+    display: flex;
+    margin-left: 2rem;
+    margin-bottom: -1rem;
+}
+
+.titleTextContainer p,
+.bodyTextContainer p{
+    background-color: white;
+    padding: 0.2rem 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-accent);    
+    cursor: pointer;
+}
+
+.titleInput,
+.bodyInput{
+    border: 0.1px solid lightgray;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    height: 120px;
+    border-radius: 25px;
+}
+
+.bodyContainer{
+    height: 600px;
+    padding: 2rem;
+    border-radius: 25px;
+}
+
+
+.bodyInput{
+    border: none;
+    height: 500px;
+}
+
+.courseSubmitBtnContainer{
+    display: flex;
+    margin: 2rem 0;
+    align-items: center;
+}
+
+.divider{
+    width: 50px;
+}

@@ -1,0 +1,47 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.title {
+  color: var(--color-accent);
+  font-size: 30px;
+}
+
+.line {
+  margin: 0.2rem 1rem 3rem 1rem;
+  width: 30px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.resetPasswordContainer {
+  margin-top: 0.3rem;
+  width: 400px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+}
+
+.resetPasswordContainer span {
+  color: var(--color-accent);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resetPasswordContainer p {
+  margin: 0;
+  color: #c0c0c0;
+}
+
+.entrySpace {
+    margin-top: 1rem;
+}

@@ -52,7 +52,7 @@
 }
 
 .searchButton:hover {
-  background-color: #ffdd9d;
+  background-color: var(--color-accent-light);
 }
 
 .searchButton img {
