@@ -1,0 +1,127 @@
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin: 2rem 0;
+}
+
+.rating {
+  height: 120px;
+  width: 45px;
+  background-color: white;
+  border-radius: 50px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating p {
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+.thumbIcon {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.subContainer {
+  display: flex;
+  min-height: 200px;
+  margin-left: 0.5rem;
+  border-radius: 25px;
+  flex: 1;
+}
+
+.cornerBadge {
+  display: flex;
+}
+
+.cornerBadge {
+  margin-top: -0.5rem;
+  height: 140px;
+  width: 140px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-self: flex-start;
+}
+
+.bubbleText {
+  position: absolute;
+  color: white;
+  font-size: 35px;
+  margin-top: 2rem;
+  margin-left: 2.5rem;
+}
+
+.answerContainer {
+  flex: 1;
+}
+
+.topContainer {
+  width: 100%;
+  margin-right: 2rem;
+}
+
+.topContainer p {
+  margin-top: 0.5rem;
+  color: grey;
+  font-size: 14px;
+}
+
+.line {
+  height: 1px;
+  width: 90%;
+  background-color: lightgrey;
+  margin-top: 0;
+}
+
+.answerContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 1rem 0rem 1rem 0;
+  width: 90%;
+}
+
+.contextTextContainer {
+  width: 100%;
+  background-color: rgb(239, 239, 239);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: var(--color-dark-qa-header-text);
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+}
+
+.answerSubContent p {
+  color: var(--color-dark-qa-header-text);
+}
+
+.commentText {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.commentText p {
+  font-size: 13px;
+  color: grey;
+  cursor: pointer;
+}
+
+.commentText p:hover {
+  color: black;
+  font-weight: 500;
+}

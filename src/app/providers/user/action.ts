@@ -22,6 +22,12 @@ export const createLecturerRequestAction = createAction<
 >(UserActionEnum.createLecturerRequest, (CreateLecturer) => ({
   CreateLecturer,
 }));
+export const getUserDetailsRequestAction = createAction<
+  IUserStateContext,
+  STPersonDto
+>(UserActionEnum.createLecturerRequest, (UserDetails) => ({
+  UserDetails,
+}));
 export const logOutUserRequestAction = createAction<IUserStateContext>(
   UserActionEnum.logOutUserRequest,
   () => ({})

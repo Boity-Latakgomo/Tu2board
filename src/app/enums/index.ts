@@ -1,6 +1,7 @@
-export enum UserActionEnum {
-  loginUserRequest = "LOGIN",
+export enum UserActionEnum{
+  loginUserRequest = 'LOGIN',
   logOutUserRequest = "LOGOUT",
-  createStudentRequest = "CREATE_STUDENT",
-  createLecturerRequest = "CREATE_LECTURER",
+  createStudentRequest = 'CREATE_STUDENT',
+  createLecturerRequest = 'CREATE_LECTURER',
+  getUserDetailsRequest = 'GET_USER_DETAILS',
 }

@@ -20,6 +20,7 @@ import {
   getCoursesTotalCountRequestAction,
   selectCourseRequestAction,
   updateCourseRequestAction,
+  listModulesRequestAction,
 } from "./actions";
 import api from "../../api";
 import { CourseDto } from "../../interfaces";
@@ -47,7 +48,7 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
         console.log("response::", response);
         message.error(response.data.error.message);
       }
-    } catch (error: any) {
+    } catch (error) {
       console.log("catch::", error.message);
     }
   };
@@ -103,7 +104,7 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
         const data = response.data;
         message.error(data.error.message);
       }
-    } catch (error: any) {
+    } catch (error) {
       console.log("Error updating course:", error.message);
     }
   };
@@ -117,10 +118,6 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
 
       if (response.status === 200) {
         const url = response.config.url;
-        if (!url) {
-          message.error("Failed to delete course!");
-          return;
-        }
         const idStartIndex = url.indexOf("id=") + "id=".length;
         const idValue = url.substring(idStartIndex);
         dispatch(deleteCourseRequestAction(idValue));
@@ -128,7 +125,7 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
       } else {
         message.error("Failed to delete course!");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.log("Error deleting course:", error.message);
     }
   };
@@ -154,7 +151,56 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
       } else {
         message.error("Failed to get course");
       }
-    } catch (error: any) {
+    } catch (error) {
+      console.log("Error getting course:", error.message);
+    }
+  };
+  // [LIST_MODULES_REQUEST_ACTION]
+  const listModules = async (courseId: string) => {
+    try {
+      console.log("ID of course", courseId);
+      const response = await api.get(
+        `https://localhost:44311/api/services/app/Module/GetModulesByCourseId?courseId=${courseId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        const data = response.data;
+        dispatch(listModulesRequestAction(data.result));
+        console.log("index modules list::", data.result);
+      } else {
+        message.error("Failed to get course");
+      }
+    } catch (error) {
+      console.log("Error getting course:", error.message);
+    }
+  };
+  // [LIST_MODULES_REQUEST_ACTION]
+  const getAllModules = async () => {
+    try {
+      const response = await api.get(
+        `https://localhost:44311/api/services/app/Module/GetAll`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        const data = response.data;
+        dispatch(listModulesRequestAction(data.result.items));
+        console.log("index modules list::", data.result);
+      } else {
+        message.error("Failed to get course");
+      }
+    } catch (error) {
       console.log("Error getting course:", error.message);
     }
   };
@@ -170,6 +216,8 @@ const CourseProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
           getCoursesTotalCount,
           listCourses,
           updateCourse,
+          listModules,
+          getAllModules,
         }}
       >
         {children}

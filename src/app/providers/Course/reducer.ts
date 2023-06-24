@@ -1,4 +1,3 @@
-
 import { CourseActionEnum } from "./actions";
 import { ICourseStateContext } from "./context";
 
@@ -13,12 +12,14 @@ export function CourseReducer(
     case CourseActionEnum.createCourseRequest:
       return {
         ...state,
-        coursesList: [
-          ...state.coursesList,
-          payload.courseCreated,
-        ],
+        ...payload,
       };
     case CourseActionEnum.listCoursesRequest:
+      return {
+        ...state,
+        ...payload,
+      };
+    case CourseActionEnum.listModulesRequest:
       return {
         ...state,
         ...payload,
@@ -32,9 +33,7 @@ export function CourseReducer(
       const updatedCourse = payload.courseUpdated;
       console.log("action updateCourse::", updatedCourse);
       const updatedCourses = state.coursesList.map((course) =>
-        course.id === updatedCourse.id
-          ? updatedCourse
-          : course
+        course.id === updatedCourse.id ? updatedCourse : course
       );
       return {
         ...state,

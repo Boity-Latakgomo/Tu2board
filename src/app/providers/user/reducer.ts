@@ -16,6 +16,8 @@ export function UserReducer(
       return { ...incomingState, ...payload };
     case UserActionEnum.createLecturerRequest:
       return { ...incomingState, ...payload };
+    case UserActionEnum.getUserDetailsRequest:
+      return { ...incomingState, ...payload };
     default:
       return incomingState;
   }

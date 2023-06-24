@@ -9,6 +9,7 @@ export interface IUserStateContext {
   readonly CreateStudent?: STPersonDto;
   readonly CreateLecturer?: STPersonDto;
   readonly LogUserOut?: PersonDto;
+  readonly UserDetails?: STPersonDto;
 }
 
 export interface IUserActionContext {
@@ -16,6 +17,7 @@ export interface IUserActionContext {
   logOutUser?:() => void;
   createStudent?: (payload: any) => void;
   createLecturer?: (payload: any) => void;
+  getUserDetails?: () => void;
 }
 
 const UserContext = createContext<IUserStateContext>(INITIAL_STATE);

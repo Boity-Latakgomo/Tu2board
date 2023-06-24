@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { CourseDto } from "../../interfaces";
+import { CourseDto, ModuleDto } from "../../interfaces";
 
 // State at first load time
 export const INITIAL_STATE: ICourseStateContext = {};
@@ -12,6 +12,7 @@ export interface ICourseStateContext {
   readonly courseDeleted?: string;
   readonly courseSelected?: CourseDto[];
   readonly coursesTotalCount?: number;
+  readonly modulesList?: ModuleDto[];
 }
 
 // Specifying the action
@@ -22,8 +23,11 @@ export interface ICourseActionContext {
   updateCourse?: (payload: CourseDto) => void;
   deleteCourse?: (payload: string) => void;
   getCourse?: (payload: string) => void;
+  listModules?: (payload: string) => void;
+  getAllModules?: () => void;
 }
 
 // Initializing the state and the action
-export const CourseStateContext = createContext<ICourseStateContext>(INITIAL_STATE);
+export const CourseStateContext =
+  createContext<ICourseStateContext>(INITIAL_STATE);
 export const CourseActionContext = createContext<ICourseActionContext>({});

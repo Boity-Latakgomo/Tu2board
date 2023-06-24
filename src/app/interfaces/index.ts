@@ -50,18 +50,19 @@ export interface CourseDto {
   DepartmentId: string;
 }
 export interface QuestionDto {
+  questionId?: any;
   id?: string;
   text: string;
   title: string;
-  personId: string;
+  personId?: string;
   moduleId: string;
-  moduleName: string;
-  personName: string;
+  moduleName?: string;
+  personName?: string;
   creationTime?: Date;
 }
 export interface AnswerDto {
   id?: any;
-  questionId: string;
+  questionId: any;
   text: string;
   personId?: string;
   ratingCount?: number;
@@ -86,4 +87,10 @@ export interface RatingDto {
   questionId?: string;
   personId?: string;
   answerId?: string;
+}
+export interface ModuleDto {
+  id?: string;
+  courseId?: string;
+  name?: string;
+  code?: string;
 }
