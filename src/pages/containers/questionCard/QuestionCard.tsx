@@ -69,14 +69,16 @@ const AnswerCard = ({ question, onAnswerClick }: IAnswerCardProps) => {
             <div className={styles.questionContent}>
               <p className={styles.title}>{question?.title}</p>
             </div>
-            <div className={styles.textContent}>
-              <ReactQuill
-                className={styles.bodyInput}
-                theme="bubble"
-                value={question?.text}
-                readOnly
-              />
-            </div>
+            {question?.text ? (
+              <div className={styles.textContent}>
+                <ReactQuill
+                  className={styles.bodyInput}
+                  theme="bubble"
+                  value={question?.text}
+                  readOnly
+                />
+              </div>
+            ) : null}
           </div>
         </div>
         <div className={styles.answerButton}>

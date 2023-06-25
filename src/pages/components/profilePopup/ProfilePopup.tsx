@@ -13,7 +13,9 @@ function ProfilePopup({ user }: IProfilePopup) {
   };
 
   return (
-    <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
+    <div
+      className={`${styles.container} bgcolor__light-theme card__shadow slide-bottom`}
+    >
       <div className={styles.row}>
         <p className={styles.title}>Student no:</p>
         <p>{user?.userName}</p>

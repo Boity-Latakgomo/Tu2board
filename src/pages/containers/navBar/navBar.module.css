@@ -18,12 +18,26 @@
   width: 100%;
 }
 
+.navContainer {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.navContainer p {
+  color: var(--color-accent);
+  cursor: pointer;
+  margin-right: 1.5rem;
+  font-size: 15px;
+}
+
+.homeNavText {
+  margin-left: 2rem;
+}
+
 .searchContainer {
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   border: 1px var(--color-accent) solid;
   border-radius: 20px;
   height: 50px;

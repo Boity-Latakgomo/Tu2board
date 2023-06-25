@@ -2,14 +2,13 @@
   position: absolute;
   height: 120px;
   width: 280px;
-  top: 90px;
+  top: 0;
   right: var(--section-horizontal-padding);
   border-radius: 20px;
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
 }
-
 
 .row {
   display: flex;

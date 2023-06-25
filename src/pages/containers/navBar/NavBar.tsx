@@ -22,23 +22,30 @@ function NavBar({
 }: INavBarProps) {
   return (
     <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
-      <Link href="/home" className={styles.logoContainer}>
-        <img src={coveredLogo.src} alt="app" />
-      </Link>
-      {showSearchBar && (
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            value={value}
-            onChange={(event) => {
-              if (onValueChange) onValueChange(event.target.value);
-            }}
-          />
-          <div className={styles.searchButton}>
-            <img src={magnifyingGlass.src} alt="search" />
+      <div className={styles.navContainer}>
+        <Link href="/home" className={styles.logoContainer}>
+          <img src={coveredLogo.src} alt="app" className={styles.logoImage}/>
+        </Link>
+        <Link href="/home" className={styles.homeNavText}><p>Home</p></Link>
+        <Link href="/post"><p>Ask Question</p></Link>
+        <Link href="/tutorials"><p>Tutorials</p></Link>
+      </div>
+      <>
+        {showSearchBar && (
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              value={value}
+              onChange={(event) => {
+                if (onValueChange) onValueChange(event.target.value);
+              }}
+            />
+            <div className={styles.searchButton}>
+              <img src={magnifyingGlass.src} alt="search" />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </>
       <div
         className={styles.profilePicContainer}
         onClick={() => {

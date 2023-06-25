@@ -60,6 +60,8 @@ const HomeContent = ({ searchText, isShowProfileIcon }: IHomeContentProps) => {
 
   let filteredQuestions: QuestionDto[] = questionSelected ?? [];
 
+  console.log("Questions:: ", questionSelected);
+
   if (selectedModule.length > 0) {
     if (questionSelected)
       filteredQuestions = questionSelected.filter((question) =>

@@ -1,5 +1,6 @@
 .container {
-  background-color: var(--color-accent);
+  background-color: white;
+  border: 1px solid var(--color-accent);
   display: flex;
   width: 150px;
   height: 45px;
@@ -10,10 +11,10 @@
 }
 
 .container:hover {
-  background-color: var(--color-accent-dark);
+  background-color: var(--color-accent-light);
 }
 
 .container p {
-  color: white;
+  color: var(--color-accent);
   padding: 0.5rem;
 }
