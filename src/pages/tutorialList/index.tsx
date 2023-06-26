@@ -7,11 +7,11 @@ const TutorialListContent = dynamic(() => import("../containers/tutorialListCont
 const Footer = dynamic(() => import("../containers/footer/Footer"), {ssr:false});
 
 const TutorialList = () => {
-
+  const [showProfileIcon, setShowProfileIcon] = React.useState(false);
   return (
     <div>
-      <NavBar />
-      <TutorialListContent />
+      <NavBar setShowProfileIcon={setShowProfileIcon} showProfileIcon={showProfileIcon}/>
+      <TutorialListContent isShowProfileIcon={showProfileIcon}/>
       <Footer />
     </div>
   );

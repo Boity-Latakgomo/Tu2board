@@ -9,3 +9,4 @@ export { default as AttachmentAdder } from "./attachmentAdder/AttachmentAdder";
 export { default as PostEntryPicker } from "./postEntryPicker/PostEntryPicker";
 export { default as NegativeButton } from "./negativeButton/NegativeButton";
 export { default as PDFViewer } from "./pdfViewer/PDFViewer";
+export { default as TextEditor } from "./textEditor/TextEditor";

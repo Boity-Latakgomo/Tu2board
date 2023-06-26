@@ -1,15 +1,35 @@
 import React, { useState } from "react";
 import { Upload, Button, message } from "antd";
 import api from "../../../app/api";
+import { useUser } from "../../../app/providers/user";
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { UploadOutlined } from "@ant-design/icons";
 import styles from "./postTutorialsContent.module.css";
-import { BubbleItem, PositiveButton, NegativeButton } from "../../components";
+import {
+  BubbleItem,
+  PositiveButton,
+  NegativeButton,
+  ProfilePopup,
+} from "../../components";
+import students from "../../../app/assets/students.png";
+import educationMaterials from "../../../app/assets/educationMaterials.png";
 
-const PostContentTutorials = () => {
+interface IPostContentTutorialsProps {
+  isShowProfileIcon?: boolean;
+}
+
+const PostContentTutorials = ({
+  isShowProfileIcon,
+}: IPostContentTutorialsProps) => {
+  const { UserDetails, getUserDetails } = useUser();
+  const loggedIn = localStorage.getItem("token");
+  if (!loggedIn) {
+    window.location.replace("/");
+  }
+
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const [pdfFile, setPdfFile] = useState(null);
   //   const [pdfFile, setPdfFile] = useState(URL);
@@ -54,7 +74,8 @@ const PostContentTutorials = () => {
       .then((response) => {
         // Handle the response from the backend if needed
         console.log("File uploaded successfully");
-        message.success("created succesfully");
+        message.success("submitted succesfully");
+        window.location.replace("/home");
       })
       .catch((error) => {
         // Handle the error if the upload fails
@@ -64,6 +85,7 @@ const PostContentTutorials = () => {
 
   return (
     <div className={styles.container}>
+      {isShowProfileIcon && <ProfilePopup user={UserDetails} />}
       <div className={styles.sectionA}>
         <form>
           <label>
@@ -112,6 +134,12 @@ const PostContentTutorials = () => {
           </div>
         </>
       ) : null}
+      <div className={styles.topImageContainer}>
+        <img src={educationMaterials.src} alt="education-materials" />
+      </div>
+      <div className={styles.bottomImageContainer}>
+        <img src={students.src} alt="students" />
+      </div>
     </div>
   );
 };

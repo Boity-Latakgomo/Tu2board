@@ -11,6 +11,11 @@ import { useAnswer } from "../../../app/providers/answer";
 import { useUser } from "../../../app/providers/user";
 import { useCourse } from "../../../app/providers/Course";
 import { ModuleDto, QuestionDto } from "../../../app/interfaces";
+import { Space, Spin } from 'antd';
+import { FallingLines } from 'react-loader-spinner'
+import {message} from 'antd';
+import students from "../../../app/assets/students.png";
+import educationMaterials from "../../../app/assets/educationMaterials.png";
 
 interface IHomeContentProps {
   searchText?: string;
@@ -18,14 +23,21 @@ interface IHomeContentProps {
 }
 
 const HomeContent = ({ searchText, isShowProfileIcon }: IHomeContentProps) => {
-  const { listQuestions, getQuestion, questionSelected } = useQuestion();
+  
+  const loggedIn = localStorage.getItem("token");
+  if(!loggedIn){
+    window.location.replace("/");
+  }
+
+  const { getQuestion, questionSelected } = useQuestion();
   const { UserDetails, getUserDetails } = useUser();
   const { listModules, modulesList } = useCourse();
 
   const [selectedModule, setSelectedModule] = useState<ModuleDto[]>([]);
 
+  console.log("UserDetailssssssssssss:: ", UserDetails);
+
   useEffect(() => {
-    if (listQuestions) listQuestions();
     if (getUserDetails) getUserDetails();
   }, []);
 
@@ -112,6 +124,20 @@ const HomeContent = ({ searchText, isShowProfileIcon }: IHomeContentProps) => {
               </>
             ))
           : null}
+      </div>
+      <div className={styles.loader}>
+      {(!getUserDetails || !modulesList)? <FallingLines
+        color="#ffa500"
+        width="100"
+        visible={true}
+        ariaLabel='falling-lines-loading'
+        /> : null}
+      </div>
+      <div className={styles.topImageContainer}>
+        <img src={educationMaterials.src} alt="education-materials" />
+      </div>
+      <div className={styles.bottomImageContainer}>
+        <img src={students.src} alt="students" />
       </div>
     </div>
   );

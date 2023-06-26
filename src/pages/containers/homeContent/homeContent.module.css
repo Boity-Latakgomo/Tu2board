@@ -16,7 +16,7 @@
 }
 
 .qaCardSpacer{
-    width: 40px;
+    width: 30px;
 }
 
 .qaContainer{
@@ -25,4 +25,48 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+}
+
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottomImageContainer,
+.topImageContainer{
+    position: absolute;
+    width: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    position: fixed;
+}
+
+.topImageContainer{
+    top: 0;
+    left: 0;
+    width: 300px;
+}
+
+.bottomImageContainer{
+    bottom: 0;
+    right: 0;
+}
+
+@media (max-width: 1550px) {
+    .bottomImageContainer,
+    .topImageContainer{
+        width: 450px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .bottomImageContainer,
+    .topImageContainer{
+        width: 350px;
+    }
 }

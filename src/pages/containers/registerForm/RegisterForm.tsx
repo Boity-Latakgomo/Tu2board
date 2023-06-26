@@ -78,7 +78,36 @@ function RegisterForm() {
     if (createStudent) createStudent(data);
   };
 
-  const registerLecture = () => {};
+  const registerLecture = () => {
+    if (
+      !studentNumber ||
+      !name ||
+      !surname ||
+      !idNumber ||
+      !phoneNumber ||
+      !emailAddress ||
+      !password ||
+      !role
+    ) {
+      console.log("Fill all the fields");
+      return;
+    }
+
+    const data: STPersonDto = {
+      userName: studentNumber,
+      name: name,
+      surname: surname,
+      identificationNumber: idNumber,
+      phoneNumber: phoneNumber,
+      emailAddress: emailAddress,
+      password: password,
+      roleNames: [role],
+    };
+
+    console.log("Lecture data: ", data);
+
+    if (createLecturer) createLecturer(data);
+  };
 
   return (
     <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
@@ -126,7 +155,13 @@ function RegisterForm() {
         />
         <div className={styles.entrySpace} />
         <AuthEntry
-          placeholder="Student number"
+          placeholder={
+            role
+              ? role === "Student"
+                ? "Student number"
+                : "Lecture number"
+              : "Student/Lecture number"
+          }
           value={studentNumber}
           onChange={setStudentNumber}
         />
@@ -137,12 +172,14 @@ function RegisterForm() {
           onChange={setIdNumber}
         />
         <div className={styles.entrySpace} />
-        <AuthEntry
-          placeholder="Academic level"
-          value={academicLevel}
-          type="number"
-          onChange={setAcademicLevel}
-        />
+        {role === "Student" ? (
+          <AuthEntry
+            placeholder="Academic level"
+            value={academicLevel}
+            type="number"
+            onChange={setAcademicLevel}
+          />
+        ) : null}
         <div className={styles.entrySpace} />
         <AuthEntry
           placeholder="Password"
@@ -157,7 +194,7 @@ function RegisterForm() {
         </p>
       </div>
       <div className={styles.entrySpace} />
-      <PositiveButton onclick={handleRegistration} text="Register"/>
+      <PositiveButton onclick={handleRegistration} text="Register" />
     </div>
   );
 }

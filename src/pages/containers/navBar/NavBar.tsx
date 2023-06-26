@@ -4,6 +4,7 @@ import coveredLogo from "../../../app/assets/coveredLogo.png";
 import magnifyingGlass from "../../../app/assets/magnifyingGlass.png";
 import profilePicHolder from "../../../app/assets/profilePicHolder.png";
 import Link from "next/link";
+import { useUser } from "../../../app/providers/user";
 
 interface INavBarProps {
   showSearchBar?: boolean;
@@ -20,15 +21,31 @@ function NavBar({
   showProfileIcon,
   setShowProfileIcon,
 }: INavBarProps) {
+  const { UserDetails } = useUser();
+
+  const isFakeLecture: boolean = UserDetails?.userName == "LT201611111";
+
   return (
     <div className={`${styles.container} bgcolor__light-theme card__shadow`}>
       <div className={styles.navContainer}>
         <Link href="/home" className={styles.logoContainer}>
-          <img src={coveredLogo.src} alt="app" className={styles.logoImage}/>
+          <img src={coveredLogo.src} alt="app" className={styles.logoImage} />
         </Link>
-        <Link href="/home" className={styles.homeNavText}><p>Home</p></Link>
-        <Link href="/post"><p>Ask Question</p></Link>
-        <Link href="/tutorials"><p>Tutorials</p></Link>
+        <Link href="/home" className={styles.homeNavText}>
+          <p>Home</p>
+        </Link>
+        <Link href="/post">
+          <p>Ask Question</p>
+        </Link>
+        {isFakeLecture ? (
+          <Link href="/postTutorials">
+            <p>Post Tutorials</p>
+          </Link>
+        ) : (
+          <Link href="/tutorialList">
+            <p>Tutorials</p>
+          </Link>
+        )}
       </div>
       <>
         {showSearchBar && (

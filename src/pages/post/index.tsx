@@ -8,10 +8,11 @@ const PostContent = dynamic(() => import("../containers/postContent/PostContent"
 const Footer = dynamic(() => import("../containers/footer/Footer"), {ssr:false});
 
 function Post() {
+  const [showProfileIcon, setShowProfileIcon] = React.useState(false);
   return (
     <div>
-      <NavBar />
-      <PostContent/>
+      <NavBar setShowProfileIcon={setShowProfileIcon} showProfileIcon={showProfileIcon}/>
+      <PostContent isShowProfileIcon={showProfileIcon}/>
       <Footer />
     </div>
   );

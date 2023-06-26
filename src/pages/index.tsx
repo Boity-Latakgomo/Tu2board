@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-import "../app/globals.css";
+import "../app/authglobal.css";
 import dynamic from 'next/dynamic';
+import styles from "./auth.module.css";
+import authpic from "../app/assets/authpic.jpeg";
 
 const AuthHeader = dynamic(() => import("./containers/authHeader/AuthHeader"), {ssr:false});
 const LoginForm = dynamic(() => import("./containers/loginForm/LoginForm"), {ssr:false});
@@ -9,9 +11,12 @@ const RegisterForm = dynamic(() => import("./containers/registerForm/RegisterFor
 const Authentication = () => {
     const [isLogin, setIsLogin] = useState(true);
   return (
-    <div>
+    <div className={styles.container}>
         <AuthHeader isLogin={isLogin} textClick={setIsLogin}/>
       {isLogin? <LoginForm /> :<RegisterForm />}
+      <div className={styles.imageContainer}>
+        <img src={authpic.src} alt="authentication-picture" />
+      </div>
     </div>
   )
 }

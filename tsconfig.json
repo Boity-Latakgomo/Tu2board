@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "src/app/providers/loader/index.js"  ],
   "exclude": [
     "node_modules"
   ]

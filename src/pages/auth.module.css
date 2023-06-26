@@ -1,0 +1,26 @@
+.container {
+}
+
+.imageContainer{
+    position: absolute;
+    width: 550px;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+@media (max-width: 1550px) {
+    .imageContainer{
+        width: 450px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .imageContainer{
+        width: 350px;
+    }
+}

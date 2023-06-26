@@ -6,8 +6,17 @@
 }
 
 .logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 140px;
   overflow: hidden;
+}
+
+.line{
+  height: 3px;
+  background-color: var(--color-accent);
+  width: 30px;
 }
 
 .logoContainer img {

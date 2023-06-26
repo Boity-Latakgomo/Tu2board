@@ -60,7 +60,8 @@ input:focus {
 
 body {
   background-color: #d7d7d7;
-  background: linear-gradient(90deg, #ffdd9d 0%, #d7d7d7 100%);
+  /* background: linear-gradient(90deg, white 0%, #f9f0ff 100%); */
+  background: linear-gradient(90deg, White 38%, #ffe4b2 1%);
 }
 
 .slide-bottom {
@@ -88,37 +89,6 @@ body {
     transform: translateY(100px);
   }
 }
-
-.slide-in-bck-center {
-	-webkit-animation: slide-in-bck-center 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-in-bck-center 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
- @-webkit-keyframes slide-in-bck-center {
-  0% {
-    -webkit-transform: translateZ(600px);
-            transform: translateZ(600px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-in-bck-center {
-  0% {
-    -webkit-transform: translateZ(600px);
-            transform: translateZ(600px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    opacity: 1;
-  }
-}
-
 
 @media (max-width: 1000px) {
 }

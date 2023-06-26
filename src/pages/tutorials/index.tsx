@@ -14,10 +14,11 @@ const Footer = dynamic(() => import("../containers/footer/Footer"), {
 });
 
 const Tutorials = () => {
+  const [showProfileIcon, setShowProfileIcon] = React.useState(false);
   return (
     <div>
-      <NavBar />
-      <TutorialsContent />
+      <NavBar setShowProfileIcon={setShowProfileIcon} showProfileIcon={showProfileIcon}/>
+      <TutorialsContent isShowProfileIcon={showProfileIcon}/>
       <Footer />
     </div>
   );

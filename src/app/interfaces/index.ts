@@ -33,8 +33,8 @@ export interface STPersonDto {
   emailAddress: string;
   password: string;
   roleNames: string[];
-  courseId: string;
-  academicYear: number;
+  courseId?: string;
+  academicYear?: number;
 }
 
 export interface LoginRequest {
@@ -93,4 +93,20 @@ export interface ModuleDto {
   courseId?: string;
   name?: string;
   code?: string;
+}
+
+export interface StoredFileDto {
+  file: string;
+  data: string;
+  lecturerId: string;
+  name: string;
+  lectureName: string;
+  isDeleted: boolean;
+  deleterUserId: string;
+  deletionTime: Date;
+  lastModificationTime: Date;
+  lastModifierUserId: Date;
+  creationTime: Date;
+  creatorUserId: number;
+  id: string;
 }

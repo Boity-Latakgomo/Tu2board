@@ -6,6 +6,7 @@ import {
   AttachmentAdder,
   PositiveButton,
   PostEntryPicker,
+  ProfilePopup,
 } from "../../components";
 import { useCourse } from "../../../app/providers/Course";
 import { useUser } from "../../../app/providers/user";
@@ -13,8 +14,19 @@ import { ModuleDto } from "../../../app/interfaces";
 import { QuestionDto } from "../../../app/interfaces";
 import { useQuestion } from "../../../app/providers/question";
 import { message } from "antd";
+import students from "../../../app/assets/students.png";
+import educationMaterials from "../../../app/assets/educationMaterials.png";
 
-const PostContent = () => {
+interface IPostContentProps {
+  isShowProfileIcon?: boolean;
+}
+
+const PostContent = ({isShowProfileIcon}: IPostContentProps) => {
+  
+  const loggedIn = localStorage.getItem("token");
+  if(!loggedIn){
+    window.location.replace("/");
+  }
   const [editorState, setEditorState] = useState("");
   const [moduleSelected, setModuleSelected] = useState<ModuleDto | undefined>(
     undefined
@@ -74,6 +86,7 @@ const PostContent = () => {
     "underline",
     "strike",
     "blockquote",
+    "code-block",
     "list",
     "bullet",
     "indent",
@@ -86,7 +99,7 @@ const PostContent = () => {
     toolbar: [
       [{ header: "1" }, { header: "2" }, { font: [] }],
       [{ size: [] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
+      ["bold", "italic", "underline", "strike", "blockquote", "code-block"],
       [
         { list: "ordered" },
         { list: "bullet" },
@@ -104,6 +117,7 @@ const PostContent = () => {
 
   return (
     <div className={styles.container}>
+      {isShowProfileIcon && <ProfilePopup user={UserDetails} />}
       <p className={styles.headerText}>Create a new question</p>
       <div className={styles.titleCover}>
         <div className={styles.titleTextContainer}>
@@ -145,6 +159,12 @@ const PostContent = () => {
         />
         <div className={styles.divider} />
         <PositiveButton onclick={handleSubmit} />
+      </div>
+      <div className={styles.topImageContainer}>
+        <img src={educationMaterials.src} alt="education-materials" />
+      </div>
+      <div className={styles.bottomImageContainer}>
+        <img src={students.src} alt="students" />
       </div>
     </div>
   );

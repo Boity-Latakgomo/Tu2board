@@ -8,6 +8,7 @@
   padding: 0.8rem;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(90deg, #d7d7d7 0%, #ffdd9d 100%);
 }
 
 .row {
